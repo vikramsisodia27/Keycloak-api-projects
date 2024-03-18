@@ -1,8 +1,8 @@
 {
   "realm": "java-bug",
   "auth-server-url": "http://localhost:8080/",
-  "resource": "ct-security",
+  "resource": "product-configuration",
   "credentials": {
-    "secret": "VxTgwDBuvPVmj6TFsaXR5zfUTD98pZgL"
+    "secret": "ev87uPWEiLP64WexLHescHQzagQzcgF8"
   }
 }
