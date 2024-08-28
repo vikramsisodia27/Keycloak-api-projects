@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  keycloak:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: keycloak-container
+    environment:
+      KC_DB: postgres  # Use a simple file-based database for development purposes
+      KEYCLOAK_ADMIN: root
+      KEYCLOAK_ADMIN_PASSWORD: root
+      KEYCLOAK_CORS: true
+    ports:
+      - 8080:8080
+
+volumes:
+  keycloak_data:
+
+networks:
+  keycloak_network:
+    driver: bridge
