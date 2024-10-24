@@ -1,7 +1,7 @@
 package com.bsp.demo.configuration;
 
-import com.aws.credit.api.CreditScoreApi;
-import com.bsp.account.invoker.ApiClient;
+
+import com.credit.invoker.ApiClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -42,11 +42,12 @@ public class ApiConfiguration {
     @Bean
     @Primary
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public com.aws.credit.invoker.ApiClient apiClientAWS(@Value("${aws.schema}") String schema,
+    public com.aws.invoker.ApiClient apiClientAWS(@Value("${aws.schema}") String schema,
                                                          @Value("${aws.host}") String host,
                                                          @Value("${aws.path}") String path) {
 
-        final com.aws.credit.invoker.ApiClient apiClient = new com.aws.credit.invoker.ApiClient();
+        final com.aws.invoker.ApiClient apiClient = new com.aws.invoker.ApiClient();
+
         apiClient.setBasePath(UriComponentsBuilder.newInstance()
                 .scheme(schema)
                 .host(host)
